@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    "transform-runtime"
+  ],
+  "presets": [
+    [
+      "env", {
+        "targets": [
+          "last 2 Chrome versions",
+          "last 2 Firefox versions",
+          "ie11",
+          "last 2 Edge versions",
+          "last 2 Safari versions",
+        ],
+        "loose": true,
+        "module": "commonjs",
+        "include": [],
+        "exclude": [],
+        "useBuiltIns": true
+      }
+    ],
+    "react"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "minify"
+      ]
+    }
+  }
+}

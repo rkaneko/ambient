@@ -1,0 +1,12 @@
+node_modules/
+
+public/static/bundle.js
+public/static/bundle.css
+public/static/vendor.dll.js
+dll/
+
+# webpack
+public/static/**/*hot-update.*
+
+# nginx
+tools/docker/nginx/conf.d/default.conf

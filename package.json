@@ -1,0 +1,84 @@
+{
+  "name": "ambient",
+  "version": "0.9.0",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "description": "The light weblog kit.",
+  "scripts": {
+    "test": "ava",
+    "watch:test": "npm test -- --watch",
+    "eslint": "eslint src",
+    "fixjs": "npm run eslint -- --fix",
+    "stylelint": "stylelint src/**/*.css",
+    "watch:build": "run-p --print-label \"build:js -- --watch\" \"build:css -- --watch\"",
+    "build:js": "webpack --config webpack.config.js",
+    "build:dll": "webpack --config webpack.dll.config.js",
+    "build:css": "webpack --config webpack.css.config.js",
+    "minify": "NODE_ENV=production node ./bin/minify.js"
+  },
+  "keywords": [],
+  "author": "rkaneko",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox version",
+    "ie 11",
+    "last 2 Edge versions",
+    "last 2 Safari version"
+  ],
+  "ava": {
+    "files": [
+      "src/**/*.spec.js"
+    ],
+    "concurrency": 2,
+    "powerAssert": true,
+    "babel": "inherit",
+    "failFast": false,
+    "failWithoutAssertions": true,
+    "serial": false,
+    "verbose": false
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "ava": "^0.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify": "^0.2.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "css-loader": "^0.28.7",
+    "csswring": "^6.0.1",
+    "eslint": "^4.10.0",
+    "eslint-config-fixable-all": "^4.8.0",
+    "eslint-plugin-ava": "^4.2.2",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "npm-run-all": "^4.1.1",
+    "postcss-calc": "^6.0.1",
+    "postcss-cli": "^4.1.1",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "raw-loader": "^0.5.1",
+    "shelljs": "^0.7.8",
+    "style-loader": "^0.19.0",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
