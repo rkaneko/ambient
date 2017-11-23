@@ -1,6 +1,8 @@
 ambient
 ===
 
+[![CircleCI](https://circleci.com/gh/rkaneko/ambient.svg?style=svg)](https://circleci.com/gh/rkaneko/ambient)
+
 A light weblog kit.
 
 ### Development
