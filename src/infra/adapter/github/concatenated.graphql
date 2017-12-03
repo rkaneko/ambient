@@ -1,0 +1,96 @@
+fragment EntryBlob on Blob {
+  commitUrl
+  text
+}
+fragment CommitEntryTree on Commit {
+  tree {
+    __typename
+    ... EntryTree
+  }
+}
+fragment EntryCommit on Commit {
+  id
+  author {
+    user {
+      id
+    }
+  }
+  committedDate
+}
+fragment EntryLatestCommit on Commit {
+  history(first: 1, path: $path) {
+    edges {
+      cursor
+      node {
+        ... EntryCommit
+      }
+    }
+  }
+}
+fragment EntryTree on Tree {
+  entries {
+    type
+    name
+    object {
+      __typename
+      ... on Tree {
+        entries {
+          type
+          name
+          object {
+            __typename
+            ... on Tree {
+              entries {
+                type
+                name
+                object {
+                  __typename
+                  ... on Tree {
+                    entries {
+                      type
+                      name
+                      object {
+                        __typename
+                        ... on Tree {
+                          entries {
+                            type
+                            name
+                            object {
+                              __typename
+                              ... EntryBlob
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+fragment User on GitActor {
+  user {
+    id
+    login
+    name
+  }
+}
+query GetEntryBlobs($owner: String!, $name: String!, $expression: String = "refs/heads/master") {
+  repository(owner: $owner, name: $name) {
+    object(expression: $expression) {
+      ... CommitEntryTree
+    }
+  }
+}
+query GetEntryCommit($owner: String!, $name: String!, $expression: String = "refs/heads/master", $path: String!) {
+  repository(owner: $owner, name: $name) {
+    object(expression: $expression) {
+      ... EntryLatestCommit
+    }
+  }
+}

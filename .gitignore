@@ -10,3 +10,5 @@ public/static/**/*hot-update.*
 
 # nginx
 tools/docker/nginx/conf.d/default.conf
+
+.credentials/
