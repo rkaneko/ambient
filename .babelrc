@@ -2,7 +2,10 @@
   "plugins": [
     "transform-flow-strip-types",
     "transform-object-rest-spread",
-    "transform-runtime"
+    "transform-runtime",
+    ["transform-react-jsx", {
+      "pragma": "h"
+    }]
   ],
   "presets": [
     [
@@ -20,8 +23,7 @@
         "exclude": [],
         "useBuiltIns": true
       }
-    ],
-    "react"
+    ]
   ],
   "env": {
     "production": {

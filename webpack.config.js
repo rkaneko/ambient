@@ -12,6 +12,12 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
+  resolve: {
+    modules: [
+      path.join(__dirname, 'src'),
+      'node_modules'
+    ]
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -29,9 +35,11 @@ module.exports = {
       {
         test: /\.js$/,
         include: [
-          path.resolve(__dirname, 'src')
+          path.join(__dirname, 'src')
         ],
-        exclude: [/node_modules/],
+        exclude: [
+          /node_modules/,
+        ],
         use: [
           {loader: 'babel-loader'}
         ]

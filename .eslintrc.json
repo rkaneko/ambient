@@ -1,5 +1,10 @@
 {
   "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "pragma": "h"
+    }
+  },
   "plugins": [
     "react",
     "node",
@@ -81,6 +86,12 @@
         "modules"
       ]
     }],
+    /* react */
+    "react/prop-types": [
+      "error", {
+        "ignore": ["children"]
+      }
+    ],
     /* overwrite fixable-all rules */
     "indent": ["error", 2],
     "no-extra-parens": ["error", "all", {
