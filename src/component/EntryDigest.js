@@ -11,13 +11,21 @@ type Props = {
 
 const {h} = require('preact');
 
-const EntryDigest = (props: Props) => ( // eslint-disable-line no-unused-vars
-  <article>
-    <h2>Title goes here</h2>
-    <div>avator, author name created at go here</div>
-    <p>body goes here</p>
-    <div>Read more goes here</div>
-  </article>
-);
+const entryDigestOf = require('../domain/model/EntryItem/entryDigestOf.js');
+
+const EntryDigest = (props: Props) => {
+  const {
+    title,
+    body
+  } = entryDigestOf(props.entryItem);
+  return (
+    <article>
+      <h2>{title}</h2>
+      <div>avator, author name created at go here</div>
+      <p>{body}</p>
+      <div>Read more</div>
+    </article>
+  );
+};
 
 module.exports = EntryDigest;

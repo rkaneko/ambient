@@ -96,10 +96,14 @@
     "babel-runtime": "^6.26.0",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
+    "hast-to-hyperscript": "^4.0.0",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
+    "mdast-util-to-hast": "^3.0.0",
     "preact": "^8.2.7",
     "query-string": "^5.0.1",
+    "remark-parse": "^4.0.0",
+    "unified": "^6.1.6",
     "unistore": "^3.0.3",
     "universal-router": "^5.0.0"
   }

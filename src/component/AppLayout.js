@@ -1,13 +1,17 @@
 // @flow
 // @jsx h
 
+import type {
+  Node
+} from 'react';
+
 const {h} = require('preact');
 
 const Header = require('./Header.js');
 
-const AppLayout = ({children, ...props}) => ( // eslint-disable-line no-unused-vars
+const AppLayout = ({children}: { children: Node | Node[] }) => (
   <div>
-    <Header />    
+    <Header />
     {children}
   </div>
 );
