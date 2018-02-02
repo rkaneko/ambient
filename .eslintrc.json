@@ -1,9 +1,16 @@
 {
+  "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "pragma": "h"
+    }
+  },
   "plugins": [
     "react",
     "node",
     "jsx-a11y",
     "promise",
+    "flowtype",
     "ava"
   ],
   "extends": [
@@ -12,6 +19,7 @@
     "plugin:node/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:promise/recommended",
+    "plugin:flowtype/recommended",
     "plugin:ava/recommended",
     "fixable-all"
   ],
@@ -68,9 +76,22 @@
     "node/exports-style": ["error", "module.exports"],
     "node/no-unpublished-require": ["error", {
       "allowModules": [
-        "ava"
+        "ava",
+        "graphql-tools"
       ]
     }],
+    "node/no-unsupported-features": ["error", {
+      "version": 8,
+      "ignores": [
+        "modules"
+      ]
+    }],
+    /* react */
+    "react/prop-types": [
+      "error", {
+        "ignore": ["children"]
+      }
+    ],
     /* overwrite fixable-all rules */
     "indent": ["error", 2],
     "no-extra-parens": ["error", "all", {

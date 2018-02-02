@@ -4,8 +4,8 @@ const webpack = require("webpack");
 module.exports = {
   entry: {
     vendor: [
-      "react",
-      "react-dom"
+      "preact",
+      "unistore"
     ]
   },
   output: {

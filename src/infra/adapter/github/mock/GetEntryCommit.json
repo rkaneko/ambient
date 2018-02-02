@@ -1,0 +1,24 @@
+{
+  "data": {
+    "repository": {
+      "object": {
+        "history": {
+          "edges": [
+            {
+              "cursor": "c36c95a617c1decbd1bf07e7d76addaa67544fad 0",
+              "node": {
+                "id": "MDY6Q29tbWl0NzY3MjQ0NTg6ODBiNzlmMDcxZGU3ODViZWMwZjRhZDg0MzQ1MmVjZTJhM2IzMzZkMA==",
+                "author": {
+                  "user": {
+                    "id": "MDQ6VXNlcjIzMTg0NjU="
+                  }
+                },
+                "committedDate": "2016-12-20T10:44:21Z"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

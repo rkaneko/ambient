@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "github": {
+      "schemaPath": "./src/infra/adapter/github/schema.json",
+      "includes": [
+        "./src/infra/adapter/github/concatenated.graphql"
+      ],
+      "excludes": [
+        "./src/infra/adapter/github/graphql/**/*.graphql"
+      ],
+      "extensions": {
+        "endpoints": {
+          "dev": {
+            "url": "https://api.github.com/graphql",
+            "headers": {
+              "Authorization": "Bearer ${env:GH_TOKEN}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

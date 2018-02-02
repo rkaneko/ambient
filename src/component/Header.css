@@ -1,0 +1,21 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 0.05rem #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  padding: 0.125rem;
+}
+
+.siteName {
+  font-size: 1rem;
+  margin: 0.125rem 0.5rem;
+}
+
+.siteDescription {
+  color: #3498db;
+  font-size: 0.8rem;
+  margin: 0.125rem 0.5rem;
+}
